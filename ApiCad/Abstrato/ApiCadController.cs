@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace ApiCad.Abstrato
 {
-    public abstract class CadastroUsuarioController : Controller
+    public abstract class ApiCadController : Controller
     {
         private readonly IUow _uow;
 
-        public CadastroUsuarioController(IServiceProvider serviceProvider)
+        public ApiCadController(IServiceProvider serviceProvider)
         {
             _uow = serviceProvider.GetRequiredService<IUow>();
         }

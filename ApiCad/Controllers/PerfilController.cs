@@ -11,7 +11,7 @@ namespace ApiCad.Controllers
 {
     [Produces("application/json")]
     [Route("api/v1/[controller]")]
-    public class PerfilController : CadastroUsuarioController
+    public class PerfilController : ApiCadController
     {
         private readonly IPerfilRepositorio _perfilRepositorio;
         private readonly IPerfilServico _perfilServico;

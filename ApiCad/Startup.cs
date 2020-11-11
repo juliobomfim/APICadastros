@@ -1,18 +1,16 @@
 
-using CadastrarUsuario.Business.Servicos;
 using ApiCad.Domain.Contratos.Repositorios;
 using ApiCad.Domain.Contratos.Servicos;
 using ApiCad.Domain.Contratos.Uow;
 using ApiCad.Infra.Conexoes;
 using ApiCad.Infra.Repositorios;
 using ApiCad.Infra.Uow;
+using CadastrarUsuario.Business.Servicos;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System.Linq;
 
 namespace CadastroUsuario
 {
