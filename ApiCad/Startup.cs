@@ -1,4 +1,5 @@
 
+using ApiCad.Business.Servicos;
 using ApiCad.Domain.Contratos.Repositorios;
 using ApiCad.Domain.Contratos.Servicos;
 using ApiCad.Domain.Contratos.Uow;
@@ -11,6 +12,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json;
 
 namespace CadastroUsuario
 {
@@ -24,11 +26,19 @@ namespace CadastroUsuario
             services.AddMvcCore((opts) =>
             {
                 opts.EnableEndpointRouting = false;
+            })
+            .AddNewtonsoftJson((opts) =>
+            {
+                opts.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             });
 
+
+            services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+            services.AddScoped<IUsuarioServico, UsuarioServico>();
             services.AddScoped<IPerfilRepositorio, PerfilRepositorio>();
             services.AddScoped<IPerfilServico, PerfilServico>();
             services.AddScoped<IUow, UnidadeDeTrabalho>();
+            
 
             services.AddCors((e) =>
                 e.AddPolicy("Dev", op => op

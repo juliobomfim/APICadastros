@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace ApiCad.Domain.Entidades
 {
-    public class Usuario:Entidade
+    public class Usuario : Entidade
     {
         protected Usuario() : base()
         {
